@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            position: absolute;
+            cursor: crosshair;
+            transform: translate(-30%,-90%);
+            /* 一个位移的属性，作用是往左和上移动自身长宽的xx%。
+            理解代码含义后,不难想到,可以与top:50%;left:50%;结合,使其达到居中效果
+             */
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="天使.gif" alt="">
+    </p>
+    <script>
+        var pp = document.querySelector('p');
+        document.addEventListener('mousemove',fn);
+        function fn(e){
+            //定义小天使的坐标，千万别忘了添加单位px
+            pp.style.left = e.pageX+'px';
+            pp.style.top = e.pageY+'px';
+        }
+        //禁用右键
+        pp.addEventListener('contextmenu',function(e){
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>

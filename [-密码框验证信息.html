@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 600px;
+            margin: 100px auto;
+        }
+        #massage{
+            display: inline-block;
+            font-size: 16px;
+            /* background: url(); */
+            padding-left: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="password" id="ipt">
+        <p id="massage">请输入6-16位的密码</p>
+    </div>
+
+    <script>
+        var ipt = document.querySelector('#ipt');
+        var mas = document.querySelector('#massage');
+        ipt.onblur = function(){
+            if(this.value.length <6 ||this.value.length >16){
+                mas.innerHTML = '密码不在6-16之内哦';
+            }
+        }
+
+    </script>
+</body>
+</html>
